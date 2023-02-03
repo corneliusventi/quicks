@@ -1,3 +1,4 @@
+import QuickButtons from "@/components/QuickButtons";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,14 +16,9 @@ export default function Home() {
           />
         </div>
 
-        <button className="absolute bottom-[27px] right-[34px] rounded-full bg-blue-1 p-2">
-          <Image
-            width={56}
-            height={56}
-            src="/cloud-lightning.svg"
-            alt="quick icon"
-          />
-        </button>
+        <div className="absolute bottom-[27px] right-[34px] flex items-center space-x-[26px]">
+          <QuickButtons />
+        </div>
       </div>
     </main>
   );

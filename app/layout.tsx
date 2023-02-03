@@ -1,6 +1,12 @@
 import { Lato } from "@next/font/google";
+import "./globals.css";
 
-const lato = Lato({ weight: ["400", "700"], subsets: ["latin"] });
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-lato",
+  display: "optional",
+});
 
 export default function RootLayout({
   children,
@@ -8,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={lato.variable}>
       <head />
-      <body className={lato.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,4 +1,4 @@
-import Quicks from "@/components/Quicks";
+import Quick from "@/components/Quick";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
           />
         </div>
 
-        <Quicks />
+        <Quick />
       </div>
     </main>
   );

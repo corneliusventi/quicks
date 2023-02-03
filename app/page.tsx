@@ -1,4 +1,4 @@
-import QuickButtons from "@/components/QuickButtons";
+import Quicks from "@/components/Quicks";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,9 +16,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="absolute bottom-[27px] right-[34px] flex items-center space-x-[26px]">
-          <QuickButtons />
-        </div>
+        <Quicks />
       </div>
     </main>
   );

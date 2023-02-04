@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Quick } from "./Quick";
+import QuickButton from "./QuickButton";
+import QuickCloseButton from "./QuickCloseButton";
+import QuickLabel from "./QuickLabel";
 
 type QuicksProps = {
   quick: Quick;
@@ -23,71 +26,50 @@ export default function Quicks({
 
   return (
     <div className="absolute bottom-[27px] right-[34px] flex items-center space-x-[26px]">
-      {isExpend && quick !== "task" && (
-        <button
-          className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-gray-6"
-          onClick={() => selectQuick("task")}
-        >
-          {quick === "default" && (
-            <div className="absolute -top-8 text-sm font-bold text-gray-6">
-              Task
-            </div>
+      {isExpend && (
+        <>
+          {quick !== "task" && (
+            <QuickButton onClick={() => selectQuick("task")}>
+              {quick === "default" && <QuickLabel label="Task" />}
+              <Image width={27} height={27} src="/task.svg" alt="task icon" />
+            </QuickButton>
           )}
-          <Image width={27} height={27} src="/task.svg" alt="task icon" />
-        </button>
-      )}
 
-      {isExpend && quick !== "inbox" && (
-        <button
-          className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-gray-6"
-          onClick={() => selectQuick("inbox")}
-        >
-          {quick === "default" && (
-            <div className="absolute -top-8 text-sm font-bold text-gray-6">
-              Inbox
-            </div>
+          {quick !== "inbox" && (
+            <QuickButton onClick={() => selectQuick("inbox")}>
+              {quick === "default" && <QuickLabel label="Inbox" />}
+              <Image width={27} height={27} src="/inbox.svg" alt="inbox icon" />
+            </QuickButton>
           )}
-          <Image width={27} height={27} src="/inbox.svg" alt="inbox icon" />
-        </button>
+        </>
       )}
 
       {quick === "default" ? (
-        <button
-          className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-blue-1"
-          onClick={toggleIsExpend}
-        >
+        <QuickButton color="bg-blue-1" onClick={toggleIsExpend} large>
           <Image width={56} height={56} src="/quick.svg" alt="quick icon" />
-        </button>
+        </QuickButton>
       ) : quick === "inbox" ? (
-        <div className="relative">
-          <button
-            className="absolute -left-3 z-0 h-[68px] w-[68px] rounded-full bg-gray-2"
-            onClick={unselectQuick}
-          />
-          <button className="relative z-10 flex h-[68px] w-[68px] items-center justify-center rounded-full bg-[#8785FF]">
+        <QuickCloseButton onClick={unselectQuick}>
+          <QuickButton color="bg-[#8785FF]" large>
             <Image
               width={30}
               height={30}
               src="/inbox-white.svg"
               alt="inbox icon"
             />
-          </button>
-        </div>
+          </QuickButton>
+        </QuickCloseButton>
       ) : quick === "task" ? (
-        <div className="relative">
-          <button
-            className="absolute -left-3 z-0 h-[68px] w-[68px] rounded-full bg-gray-2"
-            onClick={unselectQuick}
-          />
-          <button className="relative z-10 flex h-[68px] w-[68px] items-center justify-center rounded-full bg-[#F8B76B]">
+        <QuickCloseButton onClick={unselectQuick}>
+          <QuickButton color="bg-[#F8B76B]" large>
             <Image
               width={30}
               height={30}
               src="/task-white.svg"
               alt="task icon"
             />
-          </button>
-        </div>
+          </QuickButton>
+        </QuickCloseButton>
       ) : null}
     </div>
   );

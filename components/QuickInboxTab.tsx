@@ -90,6 +90,15 @@ export default function QuickInboxTab() {
         {
           id: 1,
           userId: 4,
+          from: "Mary Hilda",
+          text: "Just Fill me in for his updates yea?",
+          time: "2021-06-08T12:32:00.000Z",
+          me: false,
+          read: true,
+        },
+        {
+          id: 2,
+          userId: 5,
           from: "You",
           text: "No worries. It will be completed ASAP. I've asked him yesterday.",
           time: "2021-06-08T12:32:00.000Z",
@@ -97,8 +106,8 @@ export default function QuickInboxTab() {
           read: true,
         },
         {
-          id: 2,
-          userId: 5,
+          id: 3,
+          userId: 4,
           from: "Mary Hilda",
           text: "Hello Obaidullah, I will be your case advisor for case#029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks.",
           time: "2021-06-09T12:32:00.000Z",
@@ -106,8 +115,8 @@ export default function QuickInboxTab() {
           read: true,
         },
         {
-          id: 3,
-          userId: 4,
+          id: 4,
+          userId: 5,
           from: "You",
           text: "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
           time: "2021-06-09T12:32:00.000Z",
@@ -115,8 +124,8 @@ export default function QuickInboxTab() {
           read: true,
         },
         {
-          id: 4,
-          userId: 5,
+          id: 5,
+          userId: 4,
           from: "Mary Hilda",
           text: "Sure thing, Claren",
           time: "2021-06-09T12:32:00.000Z",
@@ -124,7 +133,7 @@ export default function QuickInboxTab() {
           read: true,
         },
         {
-          id: 5,
+          id: 6,
           userId: 6,
           from: "Obaidullah Amarkhil",
           text: "Morning. I'll try to do them. Thanks",

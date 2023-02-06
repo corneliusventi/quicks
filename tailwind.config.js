@@ -23,6 +23,7 @@ module.exports = {
         },
         blue: {
           1: "#2F80ED",
+          2: "#E9F3FF",
         },
         red: {
           1: "#EB5757",

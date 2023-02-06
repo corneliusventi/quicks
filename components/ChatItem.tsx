@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import Image from "next/image";
 import ChatIcon from "./ChatIcon";
 import GroupChatIcon from "./GroupChatIcon";
@@ -25,6 +26,7 @@ type ChatItemProps = {
 
 export default function ChatItem({ chat }: ChatItemProps) {
   const lastMessage = chat.messages[chat.messages.length - 1];
+  const time = format(new Date(lastMessage.time), "dd/MM/yyyy HH/mm");
 
   return (
     <div>
@@ -33,9 +35,7 @@ export default function ChatItem({ chat }: ChatItemProps) {
         <div className="w-full">
           <div className="flex items-start space-x-4">
             <div className="max-w-md font-bold text-blue-1">{chat.name}</div>
-            <div className="min-w-fit text-sm text-gray-2">
-              {lastMessage.time}
-            </div>
+            <div className="min-w-fit text-sm text-gray-2">{time}</div>
           </div>
           <div>
             {chat.group && (

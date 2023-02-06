@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import SearchBox from "./SearchBox";
 import MessageList from "./MessageList";
 import MessageBox from "./MessageBox";
+import SupportMessageList from "./SupportMessageList";
 
 export default function QuickInboxTab() {
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,7 @@ export default function QuickInboxTab() {
       id: 1,
       name: "109220-Naturalization",
       group: true,
+      support: false,
       participants: 3,
       messages: [
         {
@@ -34,6 +36,7 @@ export default function QuickInboxTab() {
       id: 2,
       name: "Jeannette Moraima Guaman Chamba (Hutto I-589) [Hutto Follow Up - Brief Service]",
       group: true,
+      support: false,
       participants: 3,
       messages: [
         {
@@ -51,6 +54,7 @@ export default function QuickInboxTab() {
       id: 3,
       name: "8405-Diana SALAZAR MUNGUIA",
       group: true,
+      support: false,
       participants: 3,
       messages: [
         {
@@ -68,15 +72,24 @@ export default function QuickInboxTab() {
       id: 4,
       name: "FastVisa Support",
       group: false,
-      participants: 2,
+      support: true,
       messages: [
         {
           id: 1,
           userId: 3,
           from: "FastVisa Support",
-          text: "Hey there! Welcome to your inbox.",
-          time: "2021-01-06T05:19:00.000Z",
+          text: "Hey there! Welcome to your inbox! Contact us for more information and help about anything! We'll send you a response as soon as possible.",
+          time: "2021-01-06T12:32:00.000Z",
           me: false,
+          read: true,
+        },
+        {
+          id: 2,
+          userId: 5,
+          from: "You",
+          text: "Hi, I need help with something can you help me ?",
+          time: "2021-01-06T12:32:00.000Z",
+          me: true,
           read: true,
         },
       ],
@@ -85,6 +98,7 @@ export default function QuickInboxTab() {
       id: 5,
       name: "I-589-AMARKHIL, Obaidullah [Affirmative Filing with ZHN]",
       group: true,
+      support: false,
       participants: 3,
       messages: [
         {
@@ -157,7 +171,11 @@ export default function QuickInboxTab() {
       {chat ? (
         <div className="flex h-full flex-col overflow-auto">
           <MessageBar chat={chat} />
-          <MessageList messages={chat.messages} />
+          {chat.support ? (
+            <SupportMessageList messages={chat.messages} />
+          ) : (
+            <MessageList messages={chat.messages} />
+          )}
           <MessageBox />
         </div>
       ) : (

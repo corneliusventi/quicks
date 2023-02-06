@@ -14,11 +14,13 @@ export default function MessageBar({ chat }: MessageBarProps) {
         src="/arrow-back.svg"
         alt="arow back icon"
       />
-      <div className="flex-grow">
+      <div className="flex h-10 flex-grow flex-col justify-center">
         <div className="font-bold text-blue-1">{chat.name}</div>
-        <div className="text-xs text-gray-1">
-          {chat.participants} Participants
-        </div>
+        {chat.group && (
+          <div className="text-xs text-gray-1">
+            {chat.participants} Participants
+          </div>
+        )}
       </div>
       <Image height={14} width={14} src="/close.svg" alt="close icon" />
     </div>

@@ -18,8 +18,9 @@ export type Chat = {
   id: number;
   name: string;
   group: boolean;
+  support: boolean;
   messages: Message[];
-  participants: number;
+  participants?: number;
 };
 
 type ChatItemProps = {

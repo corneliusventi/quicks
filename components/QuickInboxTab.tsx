@@ -12,7 +12,11 @@ import MessageList from "./MessageList";
 import SearchBox from "./SearchBox";
 import SupportMessageList from "./SupportMessageList";
 
-export default function QuickInboxTab() {
+type QuickInboxTabProps = {
+  close: () => void;
+};
+
+export default function QuickInboxTab({ close }: QuickInboxTabProps) {
   const {
     data: chats,
     error,
@@ -32,7 +36,11 @@ export default function QuickInboxTab() {
     <>
       {chat ? (
         <div className="flex h-full flex-col overflow-auto">
-          <MessageBar chat={chat} />
+          <MessageBar
+            chat={chat}
+            back={() => setChat(undefined)}
+            close={close}
+          />
           {chat.support ? (
             <SupportMessageList messages={chat.messages} />
           ) : (

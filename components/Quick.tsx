@@ -18,7 +18,9 @@ export default function Quick() {
   };
   return (
     <>
-      {quick !== "default" && <QuickTabs quick={quick} />}
+      {quick !== "default" && (
+        <QuickTabs quick={quick} unselectQuick={unselectQuick} />
+      )}
       <Quicks
         quick={quick}
         selectQuick={selectQuick}

@@ -6,6 +6,7 @@ import PersonalChatIcon from "./PersonalChatIcon";
 
 export type Message = {
   id: number;
+  userId: number;
   from: string;
   text: string;
   time: string;
@@ -18,13 +19,15 @@ export type Chat = {
   name: string;
   group: boolean;
   messages: Message[];
+  participants: number;
 };
 
 type ChatItemProps = {
   chat: Chat;
+  onClick: () => void;
 };
 
-export default function ChatItem({ chat }: ChatItemProps) {
+export default function ChatItem({ chat, onClick }: ChatItemProps) {
   const lastMessage = chat.messages[chat.messages.length - 1];
   const time = format(new Date(lastMessage.time), "dd/MM/yyyy HH/mm");
 
@@ -34,7 +37,12 @@ export default function ChatItem({ chat }: ChatItemProps) {
         <ChatIcon chat={chat} />
         <div className="w-full">
           <div className="flex items-start space-x-4">
-            <div className="max-w-md font-bold text-blue-1">{chat.name}</div>
+            <div
+              className="max-w-md cursor-pointer font-bold text-blue-1"
+              onClick={onClick}
+            >
+              {chat.name}
+            </div>
             <div className="min-w-fit text-sm text-gray-2">{time}</div>
           </div>
           <div>

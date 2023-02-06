@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import Image from "next/image";
+import { useState } from "react";
 import { Message } from "./ChatItem";
 import { Color } from "./MessageList";
 
@@ -8,7 +9,13 @@ type MessageItemProps = {
   color?: Color;
 };
 export default function MessageItem({ message, color }: MessageItemProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const time = format(new Date(message.time), "HH:mm");
+
+  const toggleMenu = () => {
+    setIsMenuOpen((isMoreOpen) => !isMoreOpen);
+  };
 
   return (
     <div
@@ -34,9 +41,21 @@ export default function MessageItem({ message, color }: MessageItemProps) {
           <div className="text-sm">{message.text}</div>
           <div className="text-xs">{time}</div>
         </div>
-        <button>
-          <Image height={16} width={16} src="/more.svg" alt="more icon" />
-        </button>
+        <div className="relative">
+          <button onClick={toggleMenu}>
+            <Image height={16} width={16} src="/more.svg" alt="more icon" />
+          </button>
+          {isMenuOpen && (
+            <div className="absolute flex w-32 flex-col items-start divide-y divide-gray-4 rounded-md border border-gray-4 bg-white">
+              <button className="w-full py-2 px-4 text-left text-blue-1">
+                Edit
+              </button>
+              <button className="w-full py-2 px-4 text-left text-red-1">
+                Delete
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

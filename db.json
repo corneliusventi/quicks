@@ -72,7 +72,7 @@
         {
           "id": 2,
           "userId": 5,
-          "from": "You",
+          "from": "Cornelius Venti",
           "text": "Hi, I need help with something can you help me ?",
           "time": "2021-01-06T12:32:00.000Z",
           "me": true,
@@ -99,7 +99,7 @@
         {
           "id": 2,
           "userId": 5,
-          "from": "You",
+          "from": "Cornelius Venti",
           "text": "No worries. It will be completed ASAP. I've asked him yesterday.",
           "time": "2021-06-08T12:32:00.000Z",
           "me": true,
@@ -117,7 +117,7 @@
         {
           "id": 4,
           "userId": 5,
-          "from": "You",
+          "from": "Cornelius Venti",
           "text": "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
           "time": "2021-06-09T12:32:00.000Z",
           "me": true,

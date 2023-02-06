@@ -49,7 +49,7 @@ export default function ChatItem({ chat, onClick }: ChatItemProps) {
           <div>
             {chat.group && (
               <div className="text-sm font-bold text-gray-2">
-                {lastMessage.from}:
+                {lastMessage.me ? "You" : lastMessage.from}:
               </div>
             )}
             <div className="flex justify-between">

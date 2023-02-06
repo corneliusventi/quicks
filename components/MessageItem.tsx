@@ -26,7 +26,7 @@ export default function MessageItem({ message, color }: MessageItemProps) {
       <div
         className={`text-sm font-bold ${color ? color.dark : "text-purple-1"}`}
       >
-        {message.from}
+        {message.me ? "You" : message.from}
       </div>
       <div
         className={`flex items-start space-x-2 ${

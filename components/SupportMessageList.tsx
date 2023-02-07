@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MessageItem, { Message } from "./MessageItem";
 import { Color } from "./MessageList";
 
@@ -17,6 +17,8 @@ export default function SupportMessageList({
   const [loading, setLoading] = useState(true);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
 
+  const lastMessageRef = useRef<HTMLDivElement>(null);
+
   const color: Color = { light: "bg-gray-7", dark: "text-blue-1" };
 
   useEffect(() => {
@@ -30,11 +32,18 @@ export default function SupportMessageList({
     return clearTimeout(timer);
   }, [setTimer, setLoading]);
 
+  useEffect(() => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [lastMessageRef.current]);
+
   return (
     <>
       <div className="mr-2 flex-grow space-y-4 overflow-y-auto bg-scroll pl-6 pr-3 scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-4 scrollbar-thumb-rounded-full">
-        {messages.map((message) => (
+        {messages.map((message, index) => (
           <MessageItem
+            ref={index === messages.length - 1 ? lastMessageRef : null}
             message={message}
             key={message.id}
             color={!message.me ? color : undefined}

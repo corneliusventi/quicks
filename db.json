@@ -196,5 +196,58 @@
       "me": false,
       "read": false
     }
+  ],
+  "categories": [
+    {
+      "id": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "name": "My Tasks"
+    },
+    {
+      "id": "b0e1833e-1725-4066-b550-d29c50652c97",
+      "name": "Personal Errands"
+    },
+    {
+      "id": "1f3f45d4-b0ed-4785-bfb2-f6879b6e2bce",
+      "name": "Urgent To-Do"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "e5e40e7e-b818-4a06-ab6b-141ce0c9a1eb",
+      "categoryId": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "completed": false,
+      "name": "Close off Case #012920- RODRIGUES, Amiguel",
+      "date": "2023-02-12",
+      "description": "Closing off this case since this application has been cancelled. No one really understand how this case cloud possibly be cancelled. The options and the documents within this document were totally a guaranteed for a success!"
+    },
+    {
+      "id": "ba9cc0ee-7990-4148-89cf-88639b84987b",
+      "categoryId": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "completed": false,
+      "name": "Set up documentation report for several Cases : Case 125443, Case 192829 and Case 182203",
+      "date": "2023-02-14",
+      "description": "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in."
+    },
+    {
+      "id": "34882b5c-87ad-4cdd-95aa-bc4dbde67420",
+      "categoryId": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "completed": false,
+      "name": "Set up appointment with Dr Blake",
+      "date": "2023-02-22"
+    },
+    {
+      "id": "1f821fd2-be0e-47ae-afd6-c8cb4bf9cb9c",
+      "categoryId": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "completed": true,
+      "name": "Contact Mr Caleb - video conference?",
+      "date": "2023-02-03"
+    },
+    {
+      "id": "584e5f94-cdeb-40df-a8fb-05976aa2c4ad",
+      "categoryId": "4074ee5e-4c73-4141-932e-d35a9ac53534",
+      "completed": true,
+      "name": "Assign 3 homework to Client A",
+      "date": "2023-02-02"
+    }
   ]
 }

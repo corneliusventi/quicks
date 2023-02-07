@@ -1,147 +1,150 @@
 {
   "chats": [
     {
-      "id": 1,
+      "id": "4925cd3a-9239-4bf5-926b-3440b8e9f73f",
       "name": "109220-Naturalization",
       "group": true,
       "support": false,
-      "participants": 3,
-      "messages": [
-        {
-          "id": 1,
-          "userId": 1,
-          "from": "Cameron Phillips",
-          "text": "Please check this out!",
-          "time": "2021-01-01T12:00:00.000Z",
-          "read": false,
-          "me": false
-        }
-      ]
+      "participants": 3
     },
     {
-      "id": 2,
+      "id": "03c1de12-0680-4982-90ac-e62c492c7d4d",
       "name": "Jeannette Moraima Guaman Chamba (Hutto I-589) [Hutto Follow Up - Brief Service]",
       "group": true,
       "support": false,
-      "participants": 3,
-      "messages": [
-        {
-          "id": 1,
-          "userId": 2,
-          "from": "Ellen",
-          "text": "Hey, please read.",
-          "time": "2021-02-06T03:45:00.000Z",
-          "me": false,
-          "read": true
-        }
-      ]
+      "participants": 3
     },
     {
-      "id": 3,
+      "id": "7d898fea-4fa1-455b-aff9-73e504a0027b",
       "name": "8405-Diana SALAZAR MUNGUIA",
       "group": true,
       "support": false,
-      "participants": 3,
-      "messages": [
-        {
-          "id": 1,
-          "userId": 1,
-          "from": "Cameron Phillips",
-          "text": "I understand your initial concerns and thats very valid, Elizabeth. But you are",
-          "time": "2021-01-06T05:19:00.000Z",
-          "me": false,
-          "read": true
-        }
-      ]
+      "participants": 3
     },
     {
-      "id": 4,
+      "id": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
       "name": "FastVisa Support",
       "group": false,
-      "support": true,
-      "messages": [
-        {
-          "id": 1,
-          "userId": 3,
-          "from": "FastVisa Support",
-          "text": "Hey there! Welcome to your inbox! Contact us for more information and help about anything! We'll send you a response as soon as possible.",
-          "time": "2021-01-06T12:32:00.000Z",
-          "me": false,
-          "read": true
-        },
-        {
-          "id": 2,
-          "userId": 5,
-          "from": "Cornelius Venti",
-          "text": "Hi, I need help with something can you help me ?",
-          "time": "2021-01-06T12:32:00.000Z",
-          "me": true,
-          "read": true
-        }
-      ]
+      "support": true
     },
     {
-      "id": 5,
+      "id": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
       "name": "I-589-AMARKHIL, Obaidullah [Affirmative Filing with ZHN]",
       "group": true,
       "support": false,
-      "participants": 3,
-      "messages": [
-        {
-          "id": 1,
-          "userId": 4,
-          "from": "Mary Hilda",
-          "text": "Just Fill me in for his updates yea?",
-          "time": "2021-06-08T12:32:00.000Z",
-          "me": false,
-          "read": true
-        },
-        {
-          "id": 2,
-          "userId": 5,
-          "from": "Cornelius Venti",
-          "text": "No worries. It will be completed ASAP. I've asked him yesterday.",
-          "time": "2021-06-08T12:32:00.000Z",
-          "me": true,
-          "read": true
-        },
-        {
-          "id": 3,
-          "userId": 4,
-          "from": "Mary Hilda",
-          "text": "Hello Obaidullah, I will be your case advisor for case#029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks.",
-          "time": "2021-06-09T12:32:00.000Z",
-          "me": false,
-          "read": true
-        },
-        {
-          "id": 4,
-          "userId": 5,
-          "from": "Cornelius Venti",
-          "text": "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
-          "time": "2021-06-09T12:32:00.000Z",
-          "me": true,
-          "read": true
-        },
-        {
-          "id": 5,
-          "userId": 4,
-          "from": "Mary Hilda",
-          "text": "Sure thing, Claren",
-          "time": "2021-06-09T12:32:00.000Z",
-          "me": false,
-          "read": true
-        },
-        {
-          "id": 6,
-          "userId": 6,
-          "from": "Obaidullah Amarkhil",
-          "text": "Morning. I'll try to do them. Thanks",
-          "time": "2021-06-09T12:32:00.000Z",
-          "me": false,
-          "read": false
-        }
-      ]
+      "participants": 3
+    }
+  ],
+  "messages": [
+    {
+      "id": "8b025b29-f306-4cb1-81ec-c5c190d5e788",
+      "chatId": "4925cd3a-9239-4bf5-926b-3440b8e9f73f",
+      "userId": "daaf1c62-fa56-4d1f-b5ed-fe498d2226f0",
+      "from": "Cameron Phillips",
+      "text": "Please check this out!",
+      "time": "2021-01-01T12:00:00.000Z",
+      "read": false,
+      "me": false
+    },
+    {
+      "id": "3cbe210f-6676-4db2-87ed-29c348ff2af8",
+      "chatId": "03c1de12-0680-4982-90ac-e62c492c7d4d",
+      "userId": "e7cc9cbd-c6a0-4e71-b770-56d9625203a6",
+      "from": "Ellen",
+      "text": "Hey, please read.",
+      "time": "2021-02-06T03:45:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "1aaf8dda-7008-4ecd-a6ac-6a8a076a33eb",
+      "chatId": "7d898fea-4fa1-455b-aff9-73e504a0027b",
+      "userId": "daaf1c62-fa56-4d1f-b5ed-fe498d2226f0",
+      "from": "Cameron Phillips",
+      "text": "I understand your initial concerns and thats very valid, Elizabeth. But you are",
+      "time": "2021-01-06T05:19:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "4f22f4fa-06d0-4475-abd1-97124fa64485",
+      "chatId": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
+      "userId": "cfc691aa-d3a1-4a49-a419-7132a9f55f94",
+      "from": "FastVisa Support",
+      "text": "Hey there! Welcome to your inbox! Contact us for more information and help about anything! We'll send you a response as soon as possible.",
+      "time": "2021-01-06T12:32:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "bef7d876-3c6c-4c36-a8fc-c39921daf9fd",
+      "chatId": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
+      "userId": "3a2658ff-65ab-469f-9c10-61702fe9998d",
+      "from": "Cornelius Venti",
+      "text": "Hi, I need help with something can you help me ?",
+      "time": "2021-01-06T12:32:00.000Z",
+      "me": true,
+      "read": true
+    },
+    {
+      "id": "5adb6463-bd9b-47d7-a8ce-0f3e5c15ca99",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "3dbc3949-6505-463b-ab25-d91b393c53f2",
+      "from": "Mary Hilda",
+      "text": "Just Fill me in for his updates yea?",
+      "time": "2021-06-08T12:32:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "fa5f04b0-66f9-4003-8d65-286bc10a905d",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "3a2658ff-65ab-469f-9c10-61702fe9998d",
+      "from": "Cornelius Venti",
+      "text": "No worries. It will be completed ASAP. I've asked him yesterday.",
+      "time": "2021-06-08T12:32:00.000Z",
+      "me": true,
+      "read": true
+    },
+    {
+      "id": "57d219e5-8fe1-4ee8-825d-c5592d6d8203",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "3dbc3949-6505-463b-ab25-d91b393c53f2",
+      "from": "Mary Hilda",
+      "text": "Hello Obaidullah, I will be your case advisor for case#029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks.",
+      "time": "2021-06-09T12:32:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "31b41eff-10fc-405a-992c-9161e180b31c",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "3a2658ff-65ab-469f-9c10-61702fe9998d",
+      "from": "Cornelius Venti",
+      "text": "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
+      "time": "2021-06-09T12:32:00.000Z",
+      "me": true,
+      "read": true
+    },
+    {
+      "id": "56644b51-c5df-4fc3-8e51-721a85faf27f",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "3dbc3949-6505-463b-ab25-d91b393c53f2",
+      "from": "Mary Hilda",
+      "text": "Sure thing, Claren",
+      "time": "2021-06-09T12:32:00.000Z",
+      "me": false,
+      "read": true
+    },
+    {
+      "id": "9a218c89-735a-4bf1-b166-d623091398cb",
+      "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+      "userId": "d184decd-1f13-4637-9224-43a06abcc842",
+      "from": "Obaidullah Amarkhil",
+      "text": "Morning. I'll try to do them. Thanks",
+      "time": "2021-06-09T12:32:00.000Z",
+      "me": false,
+      "read": false
     }
   ]
 }

@@ -1,6 +1,6 @@
-export default async function sendRequest(url: string, { arg }: { arg: any }) {
+export default async function putRequest(url: string, { arg }: { arg: any }) {
   return fetch(url, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify(arg),
     headers: {
       "Content-type": "application/json; charset=UTF-8",

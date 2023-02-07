@@ -1,12 +1,24 @@
 "use client";
 
-import { ChangeEventHandler, KeyboardEventHandler, useState } from "react";
+import {
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  useEffect,
+  useState,
+} from "react";
+import { Message } from "./MessageItem";
 
 type MessageBoxProps = {
+  editMessage?: Message;
   send: (text: string) => void;
+  update: (text: string, message: Message) => void;
 };
 
-export default function MessageBox({ send }: MessageBoxProps) {
+export default function MessageBox({
+  editMessage,
+  send,
+  update,
+}: MessageBoxProps) {
   const [text, setText] = useState("");
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -15,16 +27,26 @@ export default function MessageBox({ send }: MessageBoxProps) {
 
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (event.key === "Enter") {
-      sendMessage();
+      submit();
     }
   };
 
-  const sendMessage = () => {
+  const submit = () => {
     if (text) {
-      send(text);
+      if (editMessage) {
+        update(text, editMessage);
+      } else {
+        send(text);
+      }
       setText("");
     }
   };
+
+  useEffect(() => {
+    if (editMessage) {
+      setText(editMessage.text);
+    }
+  }, [editMessage, setText]);
 
   return (
     <div className="flex space-x-3 p-4">
@@ -38,9 +60,9 @@ export default function MessageBox({ send }: MessageBoxProps) {
       />
       <button
         className="rounded-md bg-blue-1 py-1.5 px-5 text-white"
-        onClick={sendMessage}
+        onClick={submit}
       >
-        Send
+        {editMessage ? "Update" : "Send"}
       </button>
     </div>
   );

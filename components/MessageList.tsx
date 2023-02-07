@@ -3,11 +3,13 @@
 import { format, isToday, parse } from "date-fns";
 import _ from "lodash";
 import Image from "next/image";
-import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import MessageItem, { Message } from "./MessageItem";
 
 type MessageListProps = {
   messages: Message[];
+  edit: (message: Message) => void;
+  remove: (message: Message) => void;
 };
 
 export type Color = {
@@ -16,7 +18,11 @@ export type Color = {
   userId?: string;
 };
 
-export default function MessageList({ messages }: MessageListProps) {
+export default function MessageList({
+  messages,
+  edit,
+  remove,
+}: MessageListProps) {
   const [isGoToNewMessage, setIsGotoNewMessage] = useState(false);
   const colors = useMemo(() => {
     let colors: Color[] = [
@@ -102,6 +108,8 @@ export default function MessageList({ messages }: MessageListProps) {
                 message={message}
                 key={message.id}
                 color={findColor(message)}
+                edit={edit}
+                remove={remove}
               />
             ))}
           </div>
@@ -128,6 +136,8 @@ export default function MessageList({ messages }: MessageListProps) {
                 ref={
                   index === unreadMessages.length - 1 ? lastMessageRef : null
                 }
+                edit={edit}
+                remove={remove}
               />
             ))}
           </div>

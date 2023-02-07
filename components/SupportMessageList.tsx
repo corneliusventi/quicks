@@ -5,10 +5,14 @@ import { Color } from "./MessageList";
 
 type SupportMessageListProps = {
   messages: Message[];
+  edit: (message: Message) => void;
+  remove: (message: Message) => void;
 };
 
 export default function SupportMessageList({
   messages,
+  edit,
+  remove,
 }: SupportMessageListProps) {
   const [loading, setLoading] = useState(true);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
@@ -34,6 +38,8 @@ export default function SupportMessageList({
             message={message}
             key={message.id}
             color={!message.me ? color : undefined}
+            edit={edit}
+            remove={remove}
           />
         ))}
       </div>

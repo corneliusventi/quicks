@@ -39,10 +39,18 @@ export default function MessageView({
     sendRequest
   );
 
-  const messageListRef = useRef<HTMLDivElement>(null);
+  const addNewMessage = async (newMessage: Message) => {
+    const message = await trigger(newMessage);
 
-  const sendMessage = async (text: string) => {
-    const message = await trigger({
+    if (messages) {
+      return message ? [...messages, message] : [...messages];
+    } else {
+      return message ? [message] : [];
+    }
+  };
+
+  const sendMessage = (text: string) => {
+    const newMessage = {
       id: uuidv4(),
       chatId: chat.id,
       userId: "3a2658ff-65ab-469f-9c10-61702fe9998d",
@@ -51,14 +59,13 @@ export default function MessageView({
       time: new Date().toISOString(),
       me: true,
       read: false,
-    });
+    };
 
-    if (message && messages) {
-      await mutate(() => [...messages, message], { revalidate: false });
-    }
-
-    if (messageListRef.current) {
-      messageListRef.current.scrollIntoView({ behavior: "smooth" });
+    if (messages) {
+      mutate(addNewMessage(newMessage), {
+        optimisticData: () => [...messages, newMessage],
+        revalidate: false,
+      });
     }
   };
 
@@ -71,7 +78,7 @@ export default function MessageView({
           {chat.support ? (
             <SupportMessageList messages={messages} />
           ) : (
-            <MessageList ref={messageListRef} messages={messages} />
+            <MessageList messages={messages} />
           )}
           <MessageBox send={sendMessage} />
         </>

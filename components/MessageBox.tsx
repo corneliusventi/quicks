@@ -3,7 +3,7 @@
 import { ChangeEventHandler, KeyboardEventHandler, useState } from "react";
 
 type MessageBoxProps = {
-  send: (text: string) => Promise<void>;
+  send: (text: string) => void;
 };
 
 export default function MessageBox({ send }: MessageBoxProps) {

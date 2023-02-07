@@ -54,50 +54,24 @@ export default function MessageView({
     deleteRequest
   );
 
-  const createMessage = async (newMessage: Message) => {
-    const message = await triggerCreateMessage(newMessage);
-
-    if (messages && message) {
-      return [...messages, message];
-    } else {
-      return [];
-    }
+  const addToMessages = (messages: Message[], newMessage: Message) => {
+    return [...messages, newMessage];
   };
 
-  const updateMessage = async (message: Message) => {
-    const updatedMessage = await triggerUpdateMessage(message);
+  const updateMessages = (messages: Message[], updatedMessage: Message) => {
+    let newMessages = [...messages];
+    const index = newMessages.findIndex(
+      (message) => message.id === updatedMessage.id
+    );
 
-    if (messages && updatedMessage) {
-      let newMessages = [...messages];
-      const index = newMessages.findIndex(
-        (message) => message.id === updatedMessage.id
-      );
-
-      if (index !== -1) {
-        newMessages[index] = updatedMessage;
-      }
-      return newMessages;
-    } else {
-      return [];
+    if (index !== -1) {
+      newMessages[index] = updatedMessage;
     }
+    return newMessages;
   };
 
-  const deleteMessage = async (deletedMessage: Message) => {
-    await triggerDeleteMessage();
-
-    if (messages) {
-      let newMessages = [...messages];
-      const index = newMessages.findIndex(
-        (message) => message.id === deletedMessage.id
-      );
-
-      if (index !== -1) {
-        newMessages.splice(index, 1);
-      }
-      return newMessages;
-    } else {
-      return [];
-    }
+  const deleteFromMessages = (messages: Message[], deletedMessage: Message) => {
+    return messages.filter((message) => message.id !== deletedMessage.id);
   };
 
   const edit = (message: Message) => {
@@ -120,12 +94,18 @@ export default function MessageView({
       read: false,
     };
 
-    if (messages) {
-      mutate(createMessage(newMessage), {
-        optimisticData: () => [...messages, newMessage],
+    mutate(
+      async (messages) => {
+        const message = await triggerCreateMessage(newMessage);
+        return messages && message ? addToMessages(messages, message) : [];
+      },
+      {
+        optimisticData: (messages) => {
+          return messages ? addToMessages(messages, newMessage) : [];
+        },
         revalidate: false,
-      });
-    }
+      }
+    );
   };
 
   const update = (text: string, message: Message) => {
@@ -134,42 +114,35 @@ export default function MessageView({
       text,
     };
 
-    if (messages) {
-      mutate(updateMessage(updatedMessage), {
-        optimisticData: () => {
-          let newMessages = [...messages];
-          const index = newMessages.findIndex(
-            (message) => message.id === updatedMessage.id
-          );
-
-          if (index !== -1) {
-            newMessages[index] = updatedMessage;
-          }
-          return newMessages;
-        },
+    mutate(
+      async (messages) => {
+        const message = await triggerUpdateMessage(updatedMessage);
+        return messages && message ? updateMessages(messages, message) : [];
+      },
+      {
+        optimisticData: (messages) =>
+          messages && message ? updateMessages(messages, updatedMessage) : [],
         revalidate: false,
-      });
+      }
+    );
 
-      setEditMessage(undefined);
-    }
+    setEditMessage(undefined);
   };
 
   useEffect(() => {
-    if (removeMessage && messages) {
-      mutate(deleteMessage(removeMessage), {
-        optimisticData: () => {
-          let newMessages = [...messages];
-          const index = newMessages.findIndex(
-            (message) => message.id === removeMessage.id
-          );
-
-          if (index !== -1) {
-            newMessages.splice(index, 1);
-          }
-          return newMessages;
+    if (removeMessage) {
+      mutate(
+        async (messages) => {
+          await triggerDeleteMessage();
+          return messages ? deleteFromMessages(messages, removeMessage) : [];
         },
-        revalidate: false,
-      });
+        {
+          optimisticData: (messages) => {
+            return messages ? deleteFromMessages(messages, removeMessage) : [];
+          },
+          revalidate: false,
+        }
+      );
 
       setRemoveMessage(undefined);
     }

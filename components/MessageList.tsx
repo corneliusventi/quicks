@@ -3,9 +3,8 @@
 import { format, isToday, parse } from "date-fns";
 import _ from "lodash";
 import Image from "next/image";
-import { useMemo, useState } from "react";
-import { Message } from "./ChatItem";
-import MessageItem from "./MessageItem";
+import { useMemo } from "react";
+import MessageItem, { Message } from "./MessageItem";
 
 type MessageListProps = {
   messages: Message[];
@@ -14,7 +13,7 @@ type MessageListProps = {
 export type Color = {
   light: string;
   dark: string;
-  userId?: number;
+  userId?: string;
 };
 
 export default function MessageList({ messages }: MessageListProps) {

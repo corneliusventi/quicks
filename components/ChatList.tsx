@@ -2,7 +2,7 @@ import ChatItem, { Chat } from "./ChatItem";
 
 type ChatListProps = {
   chats: Chat[];
-  selectChat: (id: number) => void;
+  selectChat: (id: string) => void;
 };
 
 export default function ChatList({ chats, selectChat }: ChatListProps) {

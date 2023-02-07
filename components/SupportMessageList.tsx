@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Message } from "./ChatItem";
-import MessageItem from "./MessageItem";
+import MessageItem, { Message } from "./MessageItem";
 import { Color } from "./MessageList";
 
 type SupportMessageListProps = {

@@ -1,26 +1,15 @@
 import { format } from "date-fns";
-import Image from "next/image";
 import ChatIcon from "./ChatIcon";
-import GroupChatIcon from "./GroupChatIcon";
-import PersonalChatIcon from "./PersonalChatIcon";
-
-export type Message = {
-  id: number;
-  userId: number;
-  from: string;
-  text: string;
-  time: string;
-  me: boolean;
-  read: boolean;
-};
+import { Message } from "./MessageItem";
 
 export type Chat = {
-  id: number;
+  id: string;
   name: string;
   group: boolean;
   support: boolean;
   messages: Message[];
   participants?: number;
+  lastMessage: Message;
 };
 
 type ChatItemProps = {
@@ -29,7 +18,7 @@ type ChatItemProps = {
 };
 
 export default function ChatItem({ chat, onClick }: ChatItemProps) {
-  const lastMessage = chat.messages[chat.messages.length - 1];
+  const lastMessage = chat.lastMessage;
   const time = format(new Date(lastMessage.time), "dd/MM/yyyy HH/mm");
 
   return (

@@ -1,13 +1,24 @@
 import { format } from "date-fns";
 import Image from "next/image";
 import { useState } from "react";
-import { Message } from "./ChatItem";
 import { Color } from "./MessageList";
+
+export type Message = {
+  id: string;
+  chatId: string;
+  userId: string;
+  from: string;
+  text: string;
+  time: string;
+  me: boolean;
+  read: boolean;
+};
 
 type MessageItemProps = {
   message: Message;
   color?: Color;
 };
+
 export default function MessageItem({ message, color }: MessageItemProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

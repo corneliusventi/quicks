@@ -6,7 +6,16 @@
       "group": true,
       "support": false,
       "participants": 3,
-      "lastMessageId": "8b025b29-f306-4cb1-81ec-c5c190d5e788"
+      "lastMessage": {
+        "id": "8b025b29-f306-4cb1-81ec-c5c190d5e788",
+        "chatId": "4925cd3a-9239-4bf5-926b-3440b8e9f73f",
+        "userId": "daaf1c62-fa56-4d1f-b5ed-fe498d2226f0",
+        "from": "Cameron Phillips",
+        "text": "Please check this out!",
+        "time": "2021-01-01T12:00:00.000Z",
+        "read": false,
+        "me": false
+      }
     },
     {
       "id": "03c1de12-0680-4982-90ac-e62c492c7d4d",
@@ -14,7 +23,16 @@
       "group": true,
       "support": false,
       "participants": 3,
-      "lastMessageId": "3cbe210f-6676-4db2-87ed-29c348ff2af8"
+      "lastMessage": {
+        "id": "3cbe210f-6676-4db2-87ed-29c348ff2af8",
+        "chatId": "03c1de12-0680-4982-90ac-e62c492c7d4d",
+        "userId": "e7cc9cbd-c6a0-4e71-b770-56d9625203a6",
+        "from": "Ellen",
+        "text": "Hey, please read.",
+        "time": "2021-02-06T03:45:00.000Z",
+        "me": false,
+        "read": true
+      }
     },
     {
       "id": "7d898fea-4fa1-455b-aff9-73e504a0027b",
@@ -22,14 +40,32 @@
       "group": true,
       "support": false,
       "participants": 3,
-      "lastMessageId": "1aaf8dda-7008-4ecd-a6ac-6a8a076a33eb"
+      "lastMessage": {
+        "id": "1aaf8dda-7008-4ecd-a6ac-6a8a076a33eb",
+        "chatId": "7d898fea-4fa1-455b-aff9-73e504a0027b",
+        "userId": "daaf1c62-fa56-4d1f-b5ed-fe498d2226f0",
+        "from": "Cameron Phillips",
+        "text": "I understand your initial concerns and thats very valid, Elizabeth. But you are",
+        "time": "2021-01-06T05:19:00.000Z",
+        "me": false,
+        "read": true
+      }
     },
     {
       "id": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
       "name": "FastVisa Support",
       "group": false,
       "support": true,
-      "lastMessageId": "bef7d876-3c6c-4c36-a8fc-c39921daf9fd"
+      "lastMessage": {
+        "id": "bef7d876-3c6c-4c36-a8fc-c39921daf9fd",
+        "chatId": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
+        "userId": "3a2658ff-65ab-469f-9c10-61702fe9998d",
+        "from": "Cornelius Venti",
+        "text": "Hi, I need help with something can you help me ?",
+        "time": "2021-01-06T12:32:00.000Z",
+        "me": true,
+        "read": true
+      }
     },
     {
       "id": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
@@ -37,7 +73,16 @@
       "group": true,
       "support": false,
       "participants": 3,
-      "lastMessageId": "9a218c89-735a-4bf1-b166-d623091398cb"
+      "lastMessage": {
+        "id": "9a218c89-735a-4bf1-b166-d623091398cb",
+        "chatId": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
+        "userId": "d184decd-1f13-4637-9224-43a06abcc842",
+        "from": "Obaidullah Amarkhil",
+        "text": "Morning. I'll try to do them. Thanks",
+        "time": "2021-06-09T12:32:00.000Z",
+        "me": false,
+        "read": false
+      }
     }
   ],
   "messages": [

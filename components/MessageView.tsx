@@ -3,6 +3,7 @@
 import { BASE_API } from "@/config";
 import fetcher from "@/libs/fetcher";
 import sendRequest from "@/libs/sendRequest";
+import { useRef } from "react";
 import useSWRImmutable from "swr/immutable";
 import useSWRMutation from "swr/mutation";
 import { v4 as uuidv4 } from "uuid";
@@ -38,6 +39,8 @@ export default function MessageView({
     sendRequest
   );
 
+  const messageListRef = useRef<HTMLDivElement>(null);
+
   const sendMessage = async (text: string) => {
     const message = await trigger({
       id: uuidv4(),
@@ -51,7 +54,11 @@ export default function MessageView({
     });
 
     if (message && messages) {
-      mutate(() => [...messages, message], { revalidate: false });
+      await mutate(() => [...messages, message], { revalidate: false });
+    }
+
+    if (messageListRef.current) {
+      messageListRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -64,7 +71,7 @@ export default function MessageView({
           {chat.support ? (
             <SupportMessageList messages={messages} />
           ) : (
-            <MessageList messages={messages} />
+            <MessageList ref={messageListRef} messages={messages} />
           )}
           <MessageBox send={sendMessage} disabled={isMutating} />
         </>

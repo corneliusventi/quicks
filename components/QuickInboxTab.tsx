@@ -1,7 +1,7 @@
 "use client";
 
 import fetcher from "@/libs/fetcher";
-import { useState } from "react";
+import { ChangeEventHandler, useMemo, useState } from "react";
 import useSWR from "swr";
 import { Chat } from "./ChatItem";
 import ChatList from "./ChatList";
@@ -21,6 +21,7 @@ const BASE_API = "https://my-json-server.typicode.com/corneliusventi/quicks";
 
 export default function QuickInboxTab({ close }: QuickInboxTabProps) {
   const [chat, setChat] = useState<Chat>();
+  const [search, setSearch] = useState("");
 
   const { data: chats, isLoading: isLoadingChats } = useSWR<Chat[]>(
     `${BASE_API}/chats`,
@@ -32,11 +33,21 @@ export default function QuickInboxTab({ close }: QuickInboxTabProps) {
     fetcher
   );
 
+  const filteredChats = useMemo(() => {
+    return search
+      ? chats?.filter((chat) => chat.name.toLowerCase().includes(search))
+      : chats;
+  }, [chats, search]);
+
   const selectChat = (id: string) => {
     if (chats) {
       const chat = chats.find((chat) => chat.id === id);
       setChat(chat);
     }
+  };
+
+  const handleSearchChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    setSearch(event.target.value);
   };
 
   return (
@@ -62,9 +73,11 @@ export default function QuickInboxTab({ close }: QuickInboxTabProps) {
         </div>
       ) : (
         <div className="flex h-full flex-col px-8 py-4">
-          <SearchBox />
+          <SearchBox search={search} onChange={handleSearchChange} />
           {isLoadingChats && <Loading message="Loading Chats" />}
-          {chats && <ChatList chats={chats} selectChat={selectChat} />}
+          {filteredChats && (
+            <ChatList chats={filteredChats} selectChat={selectChat} />
+          )}
         </div>
       )}
     </>

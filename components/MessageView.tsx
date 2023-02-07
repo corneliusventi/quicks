@@ -34,7 +34,7 @@ export default function MessageView({
     chat ? `${BASE_API}/chats/${chat.id}/messages` : null,
     fetcher
   );
-  const { trigger, isMutating } = useSWRMutation<Message>(
+  const { trigger } = useSWRMutation<Message>(
     `${BASE_API}/messages`,
     sendRequest
   );
@@ -73,7 +73,7 @@ export default function MessageView({
           ) : (
             <MessageList ref={messageListRef} messages={messages} />
           )}
-          <MessageBox send={sendMessage} disabled={isMutating} />
+          <MessageBox send={sendMessage} />
         </>
       )}
     </div>

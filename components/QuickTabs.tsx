@@ -13,7 +13,7 @@ export default function QuickTabs({ quick, unselectQuick }: QuickTabsProps) {
   return (
     <div className="absolute bottom-[110px] right-[34px] h-[734px] w-[734px] rounded-md border border-[#BDBDBD] bg-white">
       {quick === "inbox" ? (
-        <QuickInboxTab close={unselectQuick} />
+        <QuickInboxTab unselectQuick={unselectQuick} />
       ) : quick === "task" ? (
         <QuickTaskTab />
       ) : null}

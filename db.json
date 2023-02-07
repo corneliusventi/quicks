@@ -5,34 +5,39 @@
       "name": "109220-Naturalization",
       "group": true,
       "support": false,
-      "participants": 3
+      "participants": 3,
+      "lastMessageId": "8b025b29-f306-4cb1-81ec-c5c190d5e788"
     },
     {
       "id": "03c1de12-0680-4982-90ac-e62c492c7d4d",
       "name": "Jeannette Moraima Guaman Chamba (Hutto I-589) [Hutto Follow Up - Brief Service]",
       "group": true,
       "support": false,
-      "participants": 3
+      "participants": 3,
+      "lastMessageId": "3cbe210f-6676-4db2-87ed-29c348ff2af8"
     },
     {
       "id": "7d898fea-4fa1-455b-aff9-73e504a0027b",
       "name": "8405-Diana SALAZAR MUNGUIA",
       "group": true,
       "support": false,
-      "participants": 3
+      "participants": 3,
+      "lastMessageId": "1aaf8dda-7008-4ecd-a6ac-6a8a076a33eb"
     },
     {
       "id": "e6ad3266-97cf-4ad4-bd43-bec3c4140da8",
       "name": "FastVisa Support",
       "group": false,
-      "support": true
+      "support": true,
+      "lastMessageId": "bef7d876-3c6c-4c36-a8fc-c39921daf9fd"
     },
     {
       "id": "cb648881-e99d-40a4-8bc0-7df5367adf0f",
       "name": "I-589-AMARKHIL, Obaidullah [Affirmative Filing with ZHN]",
       "group": true,
       "support": false,
-      "participants": 3
+      "participants": 3,
+      "lastMessageId": "9a218c89-735a-4bf1-b166-d623091398cb"
     }
   ],
   "messages": [

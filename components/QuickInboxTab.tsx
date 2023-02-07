@@ -56,9 +56,9 @@ export default function QuickInboxTab({ close }: QuickInboxTabProps) {
               ) : (
                 <MessageList messages={messages} />
               )}
+              <MessageBox />
             </>
           )}
-          <MessageBox />
         </div>
       ) : (
         <div className="flex h-full flex-col px-8 py-4">

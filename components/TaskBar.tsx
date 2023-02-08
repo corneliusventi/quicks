@@ -30,7 +30,7 @@ export default function TaskBar({ category, selectCategory }: TaskBarProps) {
 
   return (
     <div className="flex justify-between">
-      <div className="relative flex w-72 items-center justify-center">
+      <div className="relative flex flex-grow items-center justify-center">
         <button
           className="flex items-center rounded-md border border-gray-3 px-4 py-2 font-bold"
           onClick={toggleIsSelectCategory}

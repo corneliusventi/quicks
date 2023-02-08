@@ -11,7 +11,7 @@ type QuickTabsProps = {
 
 export default function QuickTabs({ quick, unselectQuick }: QuickTabsProps) {
   return (
-    <div className="absolute bottom-[110px] right-[34px] h-[734px] w-[734px] rounded-md border border-[#BDBDBD] bg-white">
+    <div className="absolute bottom-[110px] right-[34px] h-3/4 w-5/12 rounded-md  border border-[#BDBDBD] bg-white ">
       {quick === "inbox" ? (
         <QuickInboxTab unselectQuick={unselectQuick} />
       ) : quick === "task" ? (

@@ -25,7 +25,7 @@ export default function ChatItem({ chat, onClick }: ChatItemProps) {
     <div>
       <div className="flex space-x-4 pt-6 pb-8">
         <ChatIcon chat={chat} />
-        <div className="w-full">
+        <div className="w-full overflow-hidden">
           <div className="flex items-start space-x-4">
             <div
               className="max-w-md cursor-pointer font-bold text-blue-1"

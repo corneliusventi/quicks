@@ -31,14 +31,26 @@ export default function Quicks({
           {quick !== "task" && (
             <QuickButton onClick={() => selectQuick("task")}>
               {quick === "default" && <QuickLabel label="Task" />}
-              <Image width={27} height={27} src="/task.svg" alt="task icon" />
+              <Image
+                width={27}
+                height={27}
+                src="/task.svg"
+                alt="task icon"
+                priority
+              />
             </QuickButton>
           )}
 
           {quick !== "inbox" && (
             <QuickButton onClick={() => selectQuick("inbox")}>
               {quick === "default" && <QuickLabel label="Inbox" />}
-              <Image width={27} height={27} src="/inbox.svg" alt="inbox icon" />
+              <Image
+                width={27}
+                height={27}
+                src="/inbox.svg"
+                alt="inbox icon"
+                priority
+              />
             </QuickButton>
           )}
         </>
@@ -46,7 +58,13 @@ export default function Quicks({
 
       {quick === "default" ? (
         <QuickButton color="bg-blue-1" onClick={toggleIsExpend} large>
-          <Image width={56} height={56} src="/quick.svg" alt="quick icon" />
+          <Image
+            width={56}
+            height={56}
+            src="/quick.svg"
+            alt="quick icon"
+            priority
+          />
         </QuickButton>
       ) : quick === "inbox" ? (
         <QuickCloseButton onClick={unselectQuick}>
@@ -56,6 +74,7 @@ export default function Quicks({
               height={30}
               src="/inbox-white.svg"
               alt="inbox icon"
+              priority
             />
           </QuickButton>
         </QuickCloseButton>
@@ -67,6 +86,7 @@ export default function Quicks({
               height={30}
               src="/task-white.svg"
               alt="task icon"
+              priority
             />
           </QuickButton>
         </QuickCloseButton>
